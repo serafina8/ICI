@@ -1,0 +1,15 @@
+﻿  prog_09.c
+D:\C\STUDY\CH11\prog_09.c(14,46): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  test.c
+D:\C\STUDY\CH11\test.c(13,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char *'입니다.
+D:\C\STUDY\CH11\test.c(13,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
+D:\C\STUDY\CH11\test.c(13,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'double *'입니다.
+D:\C\STUDY\CH11\test.c(18,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char *'입니다.
+D:\C\STUDY\CH11\test.c(18,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
+D:\C\STUDY\CH11\test.c(18,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'double *'입니다.
+D:\C\STUDY\CH11\test.c(20,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char *'입니다.
+D:\C\STUDY\CH11\test.c(20,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
+D:\C\STUDY\CH11\test.c(20,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'double *'입니다.
+  코드를 생성하고 있습니다...
+D:\C\STUDY\CH11\prog_09.c(26): warning C4716: 'main_prog_09': 값을 반환해야 합니다.
+  CH11.vcxproj -> D:\C\STUDY\CH10\Debug\CH11.exe
