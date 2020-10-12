@@ -48,11 +48,11 @@ public class tch_02_RandomWord extends JFrame {
 		}
 		System.out.println("Done.....");
 	}
-	
+	JTextField tfJumsu;
 	class NorthPane extends JPanel {
 		public NorthPane() {
 			JLabel lblJumsu = new JLabel("점수 : ");
-			JTextField tfJumsu = new JTextField(6);
+			tfJumsu = new JTextField(6);
 			tfJumsu.setEditable(false);
 			add(lblJumsu); add(tfJumsu);
 		}
@@ -68,9 +68,10 @@ public class tch_02_RandomWord extends JFrame {
 		}
 	}
 	class SouthPane extends JPanel {
+		JTextField tfInput;
 		public SouthPane() {
 			JLabel lblInput = new JLabel("입력 : ");
-			JTextField tfInput = new JTextField(15);
+			tfInput = new JTextField(15);
 			tfInput.addActionListener(new MyListener2());
 			JButton btnShuffle = new JButton("섞기");
 			btnShuffle.addActionListener(new MyListener());
@@ -88,10 +89,16 @@ public class tch_02_RandomWord extends JFrame {
 			
 		}
 		class MyListener2 implements ActionListener {
-
+			int jumsu;
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				String str1 = tfWord.getText();
+				String str2 = tfInput.getText();
+				if(str1.equals(str2)) {
+					jumsu+=10;
+				}
+				tfJumsu.setText(jumsu+"");
+				tfInput.setText("");
 			}
 			
 		}
