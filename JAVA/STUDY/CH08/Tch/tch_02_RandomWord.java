@@ -99,10 +99,13 @@ public class tch_02_RandomWord extends JFrame {
 				}
 				tfJumsu.setText(jumsu+"");
 				tfInput.setText("");
+				
+				Collections.shuffle(vec);//¼¯´Â´Ù
+				int randomNum = (int)(Math.random()*vec.size());
+				String selectedWord = vec.get(randomNum); //º¤ÅÍ¿¡¼­ ²¨³»¼­ º¯¼ö¿¡ ³Ö±â
+				tfWord.setText(selectedWord);
 			}
-			
 		}
-		
 	}
 	public static void main(String[] args) {
 		new tch_02_RandomWord();
