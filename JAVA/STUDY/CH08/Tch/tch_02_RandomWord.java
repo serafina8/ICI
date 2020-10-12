@@ -26,11 +26,19 @@ public class tch_02_RandomWord extends JFrame {
 		CenterPane cpane = new CenterPane();
 		SouthPane spane = new SouthPane();
 		
+		aa();
+		
 		cp.add(npane, BorderLayout.NORTH);
 		cp.add(cpane, BorderLayout.CENTER);
 		cp.add(spane, BorderLayout.SOUTH);
 		setSize(300,200);
 		setVisible(true);
+	}
+	
+	void aa() {
+		int randomNum = (int)(Math.random()*vec.size());
+		String selectedWord = vec.get(randomNum); //벡터에서 꺼내서 변수에 넣기
+		tfWord.setText(selectedWord);
 	}
 	
 	void wordToVector() {
@@ -42,6 +50,7 @@ public class tch_02_RandomWord extends JFrame {
 			while(sc.hasNext()) { //읽을게 있으면
 				vec.add(sc.nextLine()); //파일이 Vector에 들어간다
 			}
+			Collections.shuffle(vec);//섞는다
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,6 +76,9 @@ public class tch_02_RandomWord extends JFrame {
 			add(lblWord); add(tfWord);
 		}
 	}
+	
+	
+	
 	class SouthPane extends JPanel {
 		JTextField tfInput;
 		public SouthPane() {
@@ -81,7 +93,7 @@ public class tch_02_RandomWord extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Collections.shuffle(vec);//섞는다
+				
 				int randomNum = (int)(Math.random()*vec.size());
 				String selectedWord = vec.get(randomNum); //벡터에서 꺼내서 변수에 넣기
 				tfWord.setText(selectedWord);
@@ -96,14 +108,13 @@ public class tch_02_RandomWord extends JFrame {
 				String str2 = tfInput.getText();
 				if(str1.equals(str2)) {
 					jumsu+=10;
+				} else {
+					jumsu-=10;
 				}
 				tfJumsu.setText(jumsu+"");
 				tfInput.setText("");
 				
-				Collections.shuffle(vec);//섞는다
-				int randomNum = (int)(Math.random()*vec.size());
-				String selectedWord = vec.get(randomNum); //벡터에서 꺼내서 변수에 넣기
-				tfWord.setText(selectedWord);
+				aa();
 			}
 		}
 	}
