@@ -23,14 +23,14 @@ public class tch_02_RadioBtn_Figure extends JFrame {
 		
 		setVisible(true);
 	}
-	
+	JRadioButton btnCircle, btnRect,btnTri;
 	class MenuPane extends JPanel {
 		public MenuPane() {
 			setBackground(Color.DARK_GRAY);
 			ButtonGroup btnGroup = new ButtonGroup();
-			JRadioButton btnCircle = new JRadioButton(" 원  ", true);
-			JRadioButton btnRect = new JRadioButton("사각형");
-			JRadioButton btnTri = new JRadioButton("삼각형");
+			btnCircle = new JRadioButton(" 원  ", true);
+			btnRect = new JRadioButton("사각형");
+			btnTri = new JRadioButton("삼각형");
 			btnGroup.add(btnCircle);
 			btnGroup.add(btnRect);
 			btnGroup.add(btnTri);
@@ -50,7 +50,35 @@ public class tch_02_RadioBtn_Figure extends JFrame {
 		@Override
 		protected void paintComponent(Graphics g) {
 			g.setColor(Color.blue);
-			g.fillOval(x, y, 20, 20);
+			if(btnCircle.isSelected()) {
+				g.fillOval(x-10, y-10, 20, 20);
+					for(int i=0; i<3; i++) {
+						if(x==-30) break;
+						g.fillOval((int)(Math.random()*360), (int)(Math.random()*200), 10, 10);
+				}
+			}		
+			else if(btnRect.isSelected()) {
+				g.fillRect(x-10, y-10, 20, 20);
+					for(int i=0; i<3; i++) {
+						g.fillRect((int)(Math.random()*360), (int)(Math.random()*200), 10, 10);
+					}
+			}
+			else {
+				int[] xx = {x+20, x, x+40};
+				int[] yy= {y, y+30, y+30};
+				g.fillPolygon(xx, yy, 3);
+					for(int i=0; i<3; i++) {
+						x=(int)(Math.random()*360);
+						y=(int)(Math.random()*200);
+						int[] xs = {x+10, x, x+20};
+						int[] ys= {y, y+15, y+15};
+						g.fillPolygon(xs, ys, 3);
+					}
+				/*
+				 * g.drawLine(x, y-10, x+10, y+10); g.drawLine(x+10, y+10, x-10, y+10);
+				 * g.drawLine(x-10, y+10, x, y-10);
+				 */
+			}
 		}
 		
 		class MyListener extends MouseAdapter {
