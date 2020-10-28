@@ -1,0 +1,10 @@
+ImageIcon icon = new ImageIcon("images/winter.jpg");
+Image img = icon.getImage();
+Image changeImg = img.getScaledInstance(250, 200, Image.SCALE_SMOOTH);
+imgLabel.setIcon(new ImageIcon(changeImg));
+
+====>
+
+ImageIcon icon = new ImageIcon("images/winter.jpg");
+Image img = icon.getImage();
+imgLabel.setIcon(new ImageIcon(img.getScaledInstance(250, 200, Image.SCALE_SMOOTH)));
